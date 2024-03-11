@@ -2,7 +2,7 @@
     import java.awt.*;
     import java.awt.event.ActionEvent;
     import java.awt.event.ActionListener;
-    import java.util.ArrayList;
+    import java.util.LinkedList;
 
     class Contact {
         private String name;
@@ -34,10 +34,10 @@
     }
 
     class ContactBook {
-        private ArrayList<Contact> contacts;
+        private LinkedList<Contact> contacts;
 
         public ContactBook() {
-            contacts = new ArrayList<>();
+            contacts = new LinkedList<>();
         }
 
         public void addContact(Contact contact) {
@@ -57,7 +57,7 @@
             return null;
         }
 
-        public ArrayList<Contact> getContacts() {
+        public LinkedList<Contact> getContacts() {
             return contacts;
         }
     }
@@ -120,7 +120,7 @@
             printButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    ArrayList<Contact> contacts = contactBook.getContacts();
+                    LinkedList<Contact> contacts = contactBook.getContacts();
                     StringBuilder sb = new StringBuilder();
                     for (Contact contact : contacts) {
                         sb.append(contact.toString()).append("\n\n");
